@@ -20,6 +20,7 @@ public class Magnet implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		ModItems.initialize();
 
 		LOGGER.info("Проект загружен успешно");
 	}
