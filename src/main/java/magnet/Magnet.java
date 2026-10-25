@@ -1,7 +1,8 @@
 package magnet;
 
 import net.fabricmc.api.ModInitializer;
-
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
@@ -21,6 +22,8 @@ public class Magnet implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		ModItems.initialize();
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
+				.register(entries -> entries.add(ModItems.MAGNET));
 
 		LOGGER.info("Проект загружен успешно");
 	}
